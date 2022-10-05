@@ -1,6 +1,3 @@
-//This class is used to read from the FileSystem.txt file, which contains
-package Inventory_System;
-
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;

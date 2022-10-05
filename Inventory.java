@@ -1,5 +1,3 @@
-package Inventory_System;
-
 import java.util.ArrayList;
 
 public class Inventory {
