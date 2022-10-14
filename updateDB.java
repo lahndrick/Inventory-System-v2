@@ -5,10 +5,6 @@ import java.sql.Statement;
 
 public class updateDB extends connectionManager {
 
-    /*
-    * this method is used to update the database with the supplied string
-    * not to be confused with a query to the database which will return a ResultSet
-     */
     public void updateDB(String sql) {
 
         Connection connection = this.getConnection();
