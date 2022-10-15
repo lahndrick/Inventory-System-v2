@@ -84,3 +84,9 @@ ERROR XJ004: Database 'db-derby' not found.
 ============= end nested exception, level (1) ===========
 Cleanup action completed
 Sat Oct 15 17:12:47 NZDT 2022 Thread[DRDAConnThread_3,5,main] (DATABASE = db-derby), (DRDAID = {4}), Database 'db-derby' not found.
+----------------------------------------------------------------
+Sat Oct 15 21:25:32 NZDT 2022: Shutting down Derby engine
+----------------------------------------------------------------
+Sat Oct 15 21:25:32 NZDT 2022:
+Shutting down instance 6ede40af-0183-d9b6-df1a-0000247e0a01 on database directory C:\Users\Lahndrick Hendricks\Desktop\src\Inventory_System\Database\InventoryDB with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@73d16e93 
+----------------------------------------------------------------
