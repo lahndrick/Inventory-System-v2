@@ -5,9 +5,9 @@ import java.sql.SQLException;
 
 public class connectionManager {
 
-    private static final String USER_NAME = "pdc";
-    private static final String PASSWORD = "pdc";
-    private static final String URL = "INSERT DATABASE URL HERE";
+    private static final String USER_NAME = "inventory";
+    private static final String PASSWORD = "inventory";
+    private static final String URL = "jdbc:derby://localhost:1527/InventoryDB";
     Connection conn;
 
     //default constructor
@@ -23,7 +23,7 @@ public class connectionManager {
     //establishes a connection to the database
     public final void establishConnection() {
         try {
-            conn = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
+            conn = DriverManager.getConnection(URL,USER_NAME,PASSWORD);
         } catch (SQLException ex) {
             System.err.println("SQLException: " + ex.getMessage());
         }
