@@ -23,7 +23,7 @@ public class connectionManager {
     //establishes a connection to the database
     public final void establishConnection() {
         try {
-            conn = DriverManager.getConnection(URL,USER_NAME,PASSWORD);
+            conn = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
         } catch (SQLException ex) {
             System.err.println("SQLException: " + ex.getMessage());
         }
