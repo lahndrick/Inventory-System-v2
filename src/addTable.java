@@ -1,3 +1,5 @@
+package src;
+
 //this method can be used to create a new table if a user deemed it necessary
 
 public class addTable extends updateDB {

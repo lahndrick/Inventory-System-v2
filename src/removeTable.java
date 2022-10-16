@@ -1,3 +1,5 @@
+package src;
+
 //this method can be used to remove a table if a user deemed it necessary
 
 public class removeTable extends updateDB {
