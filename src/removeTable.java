@@ -13,6 +13,6 @@ public class removeTable extends updateDB {
     public void rem(String s) {
         String statement = "DROP TABLE " + s + ";";
 
-        this.updateDB(statement);
+        updateDB(statement);
     }
 }

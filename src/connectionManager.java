@@ -8,7 +8,7 @@ public class connectionManager {
 
     private static final String USER_NAME = "inventory";
     private static final String PASSWORD = "inventory";
-    private static final String URL = "jdbc:derby://localhost:1527/InventoryDB";
+    private static final String URL = "jdbc:derby:inventoryDB;create=true";
     Connection conn;
 
     //default constructor
@@ -29,15 +29,8 @@ public class connectionManager {
             System.err.println("SQLException: " + ex.getMessage());
         }
     }
-
-    //closes the connection to a database if there is one
-    public void closeConnections() {
-        if (conn != null) {
-            try {
-                conn.close();
-            } catch (SQLException ex) {
-                System.out.println(ex.getMessage());
-            }
-        }
+    
+    public void closeConnection(){
+        conn = null;
     }
 }
