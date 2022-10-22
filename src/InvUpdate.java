@@ -11,7 +11,7 @@ public class InvUpdate{
     
     Inventory inv;
     File file;
-    InvShow invs;   
+    InvShow invs;
     
     //only constructor for class
     public InvUpdate(InvShow invs) {
