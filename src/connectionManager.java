@@ -6,8 +6,6 @@ import java.sql.SQLException;
 
 public class connectionManager {
 
-    private static final String USER_NAME = "inventory";
-    private static final String PASSWORD = "inventory";
     private static final String URL = "jdbc:derby:inventoryDB;create=true";
     Connection conn;
 
@@ -17,20 +15,30 @@ public class connectionManager {
     }
 
     //returns the connection
-    public Connection getConnection() {
-        return this.conn;
+    public Connection getDBConnection() {
+        try {
+            return conn.getMetaData().getConnection();
+        } catch (SQLException ex) {
+            System.err.println("SQLException: " + ex.getMessage());
+        }
+        
+        return null;
     }
 
     //establishes a connection to the database
     public final void establishConnection() {
         try {
-            conn = DriverManager.getConnection(URL, USER_NAME, PASSWORD);
+            conn = DriverManager.getConnection(URL);
         } catch (SQLException ex) {
             System.err.println("SQLException: " + ex.getMessage());
         }
     }
-    
-    public void closeConnection(){
-        conn = null;
+
+    public void closeConnection() {
+        try {
+            DriverManager.getConnection("jdbc:derby:inventoryDB;shutdown=true");
+        } catch (SQLException ex) {
+            System.err.println("SQLException: " + ex.getMessage());
+        }
     }
 }

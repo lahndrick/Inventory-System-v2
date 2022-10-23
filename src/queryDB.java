@@ -13,7 +13,7 @@ public class queryDB extends connectionManager {
     */
     public ResultSet queryDB(String sql) {
 
-        Connection connection = this.getConnection();
+        Connection connection = this.getDBConnection();
         Statement statement;
         ResultSet resultSet = null;
 

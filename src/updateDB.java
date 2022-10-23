@@ -1,20 +1,16 @@
 package src;
 
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class updateDB extends connectionManager {
 
-    public void updateDB(String sql) {
+    connectionManager cm;
 
-        Connection connection = this.getConnection();
-        Statement statement = null;
-
+    public void updateDB(Statement statement) {
         try {
-            statement = connection.createStatement();
-            statement.executeUpdate(sql);
-
+            cm = new connectionManager();
+            cm.establishConnection();
+            statement.executeBatch();
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
