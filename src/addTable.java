@@ -6,11 +6,15 @@ import java.sql.Statement;
 
 public class addTable extends updateDB {
 
+    int tableNum = 0;
+    
     public addTable(String s) {
 
         try {
+            
             Statement statement = conn.createStatement();
-            statement.addBatch("CREATE TABLE " + s + "(random INT)");
+            statement.addBatch("CREATE TABLE " + s + "(key " + tableNum + ")");
+            tableNum++;
             
             updateDB(statement);
         } catch (SQLException ex) {
