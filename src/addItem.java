@@ -16,7 +16,7 @@ public class addItem extends updateDB {
             
             Statement statement = conn.createStatement();
             statement.addBatch("INSERT INTO ITEM (skucode, location, quantity, barcode)");
-            statement.addBatch("VALUES (" + skuCode + ", " + location + ", " + quantity + ", " + barcode + ")");
+            statement.addBatch("VALUES (" + skuCode + ", " + location + ", " + quantity + ", " + barcode + ");");
             
             updateDB(statement);
             
@@ -25,15 +25,14 @@ public class addItem extends updateDB {
         }
     }
 
-    /* for testing:
+
     public static void main(String[] args) {
         Item item = new Item();
         item.setBarcode("15652");
-        item.setLocation("loc15");
+        item.setLocation("Loc15");
         item.setQuantity(15);
         item.setSkuCode("165");
 
         new addItem(item);
     }
-    */
 }

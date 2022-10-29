@@ -1,6 +1,6 @@
 package src;
 
-//this method can be used to create a new table if a user deemed it necessary
+//this method can be used to create a new table if deemed necessary
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -17,9 +17,4 @@ public class addTable extends updateDB {
             System.out.println("SQLException, addTable ");
         }
     }
-    /* for testing:
-    public static void main(String[] args){
-        new addTable("ITEM");
-    }
-    */
 }

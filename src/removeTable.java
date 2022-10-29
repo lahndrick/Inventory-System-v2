@@ -1,6 +1,6 @@
 package src;
 
-//this method can be used to remove a table if a user deemed it necessary
+//this method can be used to remove a table if deemed necessary
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -17,10 +17,4 @@ public class removeTable extends updateDB {
 
         updateDB(statement);
     }
-
-    /* for testing:
-    public static void main(String[] args) {
-        new removeTable("ITEM");
-    }
-    */
 }

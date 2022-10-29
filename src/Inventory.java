@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Inventory {
 
-    private ArrayList<Item> inventory;
+    public ArrayList<Item> inventory;
 
     //default constructor
     public Inventory() {
