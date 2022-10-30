@@ -32,7 +32,6 @@ public class addItem extends updateDB {
         item.setLocation("Loc15");
         item.setQuantity(15);
         item.setSkuCode("165");
-
         
         addItem addItem = new addItem(item);
     }
