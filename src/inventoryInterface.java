@@ -1,33 +1,59 @@
 package src;
 
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+
 public class inventoryInterface extends javax.swing.JFrame {
 
+    // Variables declaration
     public invShow invshow;
-    
+    public String invAll;
+
+    private JTextField barcodeTextField;
+    private JTextField locationTextField;
+    private JTextField quantityTextField;
+    private JTextField searchItemTextField;
+    private JTextField skuCodeTextField;
+    private JTextField tableNameTextField;
+    private JTextField allItemsTextfield;
+
+    private JButton addItemButton;
+    private JButton addTableButton;
+    private JButton removeItemButton;
+    private JButton removeTableButton;
+    private JButton searchItemButton;
+
+    private JScrollPane allItemsScrollPane;
+    private JScrollPane foundItemsScrollPane;
+
+    private Item[] itemList;
+
     public inventoryInterface() {
         initComponents();
     }
 
     @SuppressWarnings("unchecked")
     private void initComponents() {
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         //initialisations
+        //test fields
         skuCodeTextField = new javax.swing.JTextField();
         barcodeTextField = new javax.swing.JTextField();
         locationTextField = new javax.swing.JTextField();
         quantityTextField = new javax.swing.JTextField();
-        addItemButton = new javax.swing.JButton();
-        allItemsScrollPane = new javax.swing.JScrollPane();
-        allItemsScrollPane.add(allItemsTextfield);
         tableNameTextField = new javax.swing.JTextField();
+        searchItemTextField = new javax.swing.JTextField();
+        //scroll panes
+        allItemsScrollPane = new javax.swing.JScrollPane();
+        foundItemsScrollPane = new javax.swing.JScrollPane();
+        //item buttons
+        addItemButton = new javax.swing.JButton();
         addTableButton = new javax.swing.JButton();
         removeTableButton = new javax.swing.JButton();
-        foundItemsScrollPane = new javax.swing.JScrollPane();
         searchItemButton = new javax.swing.JButton();
-        searchItemTextField = new javax.swing.JTextField();
         removeItemButton = new javax.swing.JButton();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         //text sets
         skuCodeTextField.setText("sku code");
@@ -41,6 +67,10 @@ public class inventoryInterface extends javax.swing.JFrame {
         searchItemButton.setText("Search item");
         searchItemTextField.setText("search Item");
         removeItemButton.setText("remove item");
+
+        for (int i = 0; i < invshow.inventory.size(); i++) {
+            allItemsTextfield.setText(invAll);
+        }
 
         //adding components to layout
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -114,14 +144,8 @@ public class inventoryInterface extends javax.swing.JFrame {
                     break;
                 }
             }
-        //catching exceptions
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(inventoryInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(inventoryInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(inventoryInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            //catching exceptions
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(inventoryInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
@@ -131,20 +155,4 @@ public class inventoryInterface extends javax.swing.JFrame {
             }
         });
     }
-
-    // Variables declaration
-    private javax.swing.JButton addItemButton;
-    private javax.swing.JButton addTableButton;
-    private javax.swing.JScrollPane allItemsScrollPane;
-    private javax.swing.JTextField barcodeTextField;
-    private javax.swing.JScrollPane foundItemsScrollPane;
-    private javax.swing.JTextField locationTextField;
-    private javax.swing.JTextField quantityTextField;
-    private javax.swing.JButton removeItemButton;
-    private javax.swing.JButton removeTableButton;
-    private javax.swing.JButton searchItemButton;
-    private javax.swing.JTextField searchItemTextField;
-    private javax.swing.JTextField skuCodeTextField;
-    private javax.swing.JTextField tableNameTextField;
-    private javax.swing.JTextField allItemsTextfield;
 }

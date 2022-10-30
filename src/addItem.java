@@ -25,7 +25,7 @@ public class addItem extends updateDB {
         }
     }
 
-/* for testing:
+
     public static void main(String[] args) {
         Item item = new Item();
         item.setBarcode("15652");
@@ -33,7 +33,8 @@ public class addItem extends updateDB {
         item.setQuantity(15);
         item.setSkuCode("165");
 
-        new addItem(item);
+        
+        addItem addItem = new addItem(item);
     }
-*/
+
 }
