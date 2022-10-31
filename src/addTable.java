@@ -6,19 +6,28 @@ import java.sql.Statement;
 
 public class addTable extends updateDB {
 
-    int tableNum = 0;
-    
+    Statement statement = null;
+
     public addTable(String s) {
 
         try {
-            
-            Statement statement = conn.createStatement();
-            statement.addBatch("CREATE TABLE " + s + "(key " + tableNum + ")");
-            tableNum++;
-            
+            statement = conn.createStatement();
+            statement.addBatch("CREATE TABLE " + s + "(tableNum INT)");
+
             updateDB(statement);
         } catch (SQLException ex) {
             System.out.println("SQLException, addTable ");
         }
     }
+
+    public void update() {
+        updateDB(statement);
+    }
+
+    /* FOR TESTING
+    public static void main(String[] args) {
+        addTable addTable = new addTable("ITEM");
+        addTable.update();
+    }
+     */
 }

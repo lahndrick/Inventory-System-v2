@@ -32,9 +32,9 @@ public class Inventory {
     }
 
     //this function find the first item with the specified barcode
-    public Item findBarcode(int barcode) {
+    public Item findBarcode(String barcode) {
         for (int x = 0; x < inventory.size(); x++) {
-            if (inventory.get(x).getBarcode().equals(String.valueOf(barcode))) {
+            if (inventory.get(x).getBarcode().equalsIgnoreCase(barcode)) {
                 return inventory.get(x);
             }
         }

@@ -1,11 +1,12 @@
 package src;
 
 //This method adds an item object to the inventory database by getting all the relevant information from the object and using it in a mysql statement
-
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class addItem extends updateDB {
+
+    Statement statement = null;
 
     public addItem(Item item) {
         try {
@@ -13,19 +14,21 @@ public class addItem extends updateDB {
             String location = item.getLocation();
             int quantity = item.getQuantity();
             String barcode = item.getBarcode();
-            
-            Statement statement = conn.createStatement();
-            statement.addBatch("INSERT INTO ITEM (skucode, location, quantity, barcode)");
-            statement.addBatch("VALUES (" + skuCode + ", " + location + ", " + quantity + ", " + barcode + ");");
-            
-            updateDB(statement);
-            
+
+            statement = conn.createStatement();
+            statement.addBatch("INSERT INTO ITEM (skucode, location, quantity, barcode)"
+                    + "VALUES (" + skuCode + ", " + location + ", " + quantity + ", " + barcode + ")");
+
         } catch (SQLException ex) {
             System.out.println("SQLException" + ex);
         }
     }
 
+    public void update() {
+        updateDB(statement);
+    }
 
+    /* FOR TESTING
     public static void main(String[] args) {
         Item item = new Item();
         item.setBarcode("15652");
@@ -34,6 +37,7 @@ public class addItem extends updateDB {
         item.setSkuCode("165");
         
         addItem addItem = new addItem(item);
+        addItem.update();
     }
-
+     */
 }

@@ -4,7 +4,7 @@ package src;
 public class invShow extends Inventory {
     
     public String showAll() {
-        String output = "test";
+        String output = null;
         
         for(int x = 0; x < inventory.size();x++) {
             output = inventory.get(x).toString() + "\n";
