@@ -11,7 +11,7 @@ public class combineInvDB extends Inventory {
 
     public combineInvDB() {
         queueItems();
-        add();
+        addAll();
     }
 
     private void queueItems() {
@@ -27,7 +27,7 @@ public class combineInvDB extends Inventory {
         }
     }
 
-    public void add() {
+    public void addAll() {
 
         int size = itemList.length;
         addItem addItem;

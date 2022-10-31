@@ -16,7 +16,7 @@ public class addItem extends updateDB {
             String barcode = item.getBarcode();
 
             statement = conn.createStatement();
-            statement.addBatch("INSERT INTO ITEM (skucode, location, quantity, barcode)"
+            statement.addBatch("INSERT INTO APP.ITEM (barcode,location,skucode,quantity)"
                     + "VALUES (" + skuCode + ", " + location + ", " + quantity + ", " + barcode + ")");
 
         } catch (SQLException ex) {
@@ -28,16 +28,12 @@ public class addItem extends updateDB {
         updateDB(statement);
     }
 
-    /* FOR TESTING
+/* FOR TESTING
     public static void main(String[] args) {
-        Item item = new Item();
-        item.setBarcode("15652");
-        item.setLocation("Loc15");
-        item.setQuantity(15);
-        item.setSkuCode("165");
+        Item item = new Item("sku15", "bar15", "loc15", 15);
         
         addItem addItem = new addItem(item);
         addItem.update();
     }
-     */
+*/
 }

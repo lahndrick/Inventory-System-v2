@@ -109,7 +109,7 @@ public class inventoryInterface extends JFrame {
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFrame().setVisible(true);
+                new inventoryInterface().setVisible(true);
             }
         });
     }
@@ -133,5 +133,4 @@ public class inventoryInterface extends JFrame {
     private JButton removeItemButton;
     private JButton removeTableButton;
     private JButton searchItemButton;
-
 }
