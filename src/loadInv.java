@@ -6,7 +6,7 @@ import java.sql.*;
 public class loadInv extends Inventory {
 
     private String query;
-    private ResultSet rs;
+    public ResultSet rs;
     private queryDB qDB;
 
     public loadInv() {
