@@ -1,12 +1,12 @@
 package src;
 
-//this class sends a query to the database, then uses the returning ResultSet to create a new array containing all the items
+//this class sends a query to the database, then uses the resulting ResultSet to create a new array containing all the items
 import java.sql.*;
 
 public class loadInv extends Inventory {
 
     private String query;
-    public ResultSet rs;
+    private ResultSet rs;
     private queryDB qDB;
 
     public loadInv() {

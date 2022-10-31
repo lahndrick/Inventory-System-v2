@@ -1,33 +1,14 @@
 package src;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.WindowConstants;
 
-public class inventoryInterface extends javax.swing.JFrame {
-
-    // Variables declaration
-    public invShow invshow;
-    public String invAll;
-
-    private JTextField barcodeTextField;
-    private JTextField locationTextField;
-    private JTextField quantityTextField;
-    private JTextField searchItemTextField;
-    private JTextField skuCodeTextField;
-    private JTextField tableNameTextField;
-    private JTextField allItemsTextfield;
-
-    private JButton addItemButton;
-    private JButton addTableButton;
-    private JButton removeItemButton;
-    private JButton removeTableButton;
-    private JButton searchItemButton;
-
-    private JScrollPane allItemsScrollPane;
-    private JScrollPane foundItemsScrollPane;
-
-    private Item[] itemList;
+public class inventoryInterface extends JFrame {
 
     public inventoryInterface() {
         initComponents();
@@ -35,124 +16,122 @@ public class inventoryInterface extends javax.swing.JFrame {
 
     @SuppressWarnings("unchecked")
     private void initComponents() {
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        //initialisations
-        //test fields
-        skuCodeTextField = new javax.swing.JTextField();
-        barcodeTextField = new javax.swing.JTextField();
-        locationTextField = new javax.swing.JTextField();
-        quantityTextField = new javax.swing.JTextField();
-        tableNameTextField = new javax.swing.JTextField();
-        searchItemTextField = new javax.swing.JTextField();
-        //scroll panes
-        allItemsScrollPane = new javax.swing.JScrollPane();
-        foundItemsScrollPane = new javax.swing.JScrollPane();
-        //item buttons
-        addItemButton = new javax.swing.JButton();
-        addTableButton = new javax.swing.JButton();
-        removeTableButton = new javax.swing.JButton();
-        searchItemButton = new javax.swing.JButton();
-        removeItemButton = new javax.swing.JButton();
+        skuCodeTextField = new JTextField();
+        barcodeTextField = new JTextField();
+        locationTextField = new JTextField();
+        quantityTextField = new JTextField();
+        addItemButton = new JButton();
+        removeItemButton = new JButton();
+        searchItemButton = new JButton();
+        tableNameTextField = new JTextField();
+        removeTableButton = new JButton();
+        addTableButton = new JButton();
+        allItemsScrollPane = new JScrollPane();
+        allItemsTextField = new JTextField();
+        foundItemsScrollPane = new JScrollPane();
+        foundItemsTextField = new JTextField();
+        searchItemTextField = new JTextField();
 
-        //text sets
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         skuCodeTextField.setText("sku code");
+        getContentPane().add(skuCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 30));
+
         barcodeTextField.setText("barcode");
+        getContentPane().add(barcodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 120, 30));
+
         locationTextField.setText("location");
+        getContentPane().add(locationTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 120, 30));
+
         quantityTextField.setText("quantity");
+        getContentPane().add(quantityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 155, 120, 30));
+
         addItemButton.setText("add item");
-        tableNameTextField.setText("table name");
-        addTableButton.setText("add table");
-        removeTableButton.setText("remove table");
-        searchItemButton.setText("Search item");
-        searchItemTextField.setText("search Item");
+        getContentPane().add(addItemButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 205, 120, 36));
+
         removeItemButton.setText("remove item");
+        getContentPane().add(removeItemButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 205, 150, 36));
 
-        for (int i = 0; i < invshow.inventory.size(); i++) {
-            allItemsTextfield.setText(invAll);
-        }
+        searchItemButton.setText("search item");
+        getContentPane().add(searchItemButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 126, 36));
 
-        //adding components to layout
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(skuCodeTextField)
-                                        .addComponent(locationTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                                        .addComponent(barcodeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                                        .addComponent(quantityTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                                        .addComponent(addItemButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(allItemsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(removeItemButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(tableNameTextField)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(addTableButton)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                                                .addComponent(removeTableButton))
-                                        .addComponent(foundItemsScrollPane)
-                                        .addComponent(searchItemButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(searchItemTextField, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(skuCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(barcodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(22, 22, 22)
-                                                .addComponent(locationTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(quantityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addComponent(allItemsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                                .addComponent(tableNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(addTableButton)
-                                                        .addComponent(removeTableButton))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(foundItemsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(searchItemTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(26, 26, 26)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                .addComponent(addItemButton)
-                                                .addComponent(removeItemButton))
-                                        .addComponent(searchItemButton))
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        tableNameTextField.setText("table name");
+        getContentPane().add(tableNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 0, 160, 30));
+
+        removeTableButton.setText("remove");
+        getContentPane().add(removeTableButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 80, -1));
+
+        addTableButton.setText("add");
+        getContentPane().add(addTableButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 80, -1));
+
+        allItemsTextField.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                allItemsTextFieldComponentAdded(evt);
+            }
+        });
+        allItemsScrollPane.setViewportView(allItemsTextField);
+
+        getContentPane().add(allItemsScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 140, 200));
+
+        foundItemsScrollPane.setViewportView(foundItemsTextField);
+
+        getContentPane().add(foundItemsScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 160, 70));
+
+        searchItemTextField.setText("search item");
+        getContentPane().add(searchItemTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 130, -1));
 
         pack();
     }
 
-    //main
+    private void allItemsTextFieldComponentAdded(java.awt.event.ContainerEvent evt) {
+        // TODO add your handling code here:
+    }
+
     public static void main(String args[]) {
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
-            //catching exceptions
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(inventoryInterface.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        } catch (InstantiationException ex) {
+            System.out.println(ex.getMessage());
+        } catch (IllegalAccessException ex) {
+            System.out.println(ex.getMessage());
+        } catch (UnsupportedLookAndFeelException ex) {
+            System.out.println(ex.getMessage());
         }
 
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new inventoryInterface().setVisible(true);
+                new JFrame().setVisible(true);
             }
         });
     }
+
+    // Variables declaration              
+    private JButton addItemButton;
+    private JButton addTableButton;
+
+    private JScrollPane allItemsScrollPane;
+    private JScrollPane foundItemsScrollPane;
+
+    private JTextField allItemsTextField;
+    private JTextField barcodeTextField;
+    private JTextField searchItemTextField;
+    private JTextField skuCodeTextField;
+    private JTextField tableNameTextField;
+    private JTextField foundItemsTextField;
+    private JTextField locationTextField;
+    private JTextField quantityTextField;
+
+    private JButton removeItemButton;
+    private JButton removeTableButton;
+    private JButton searchItemButton;
+
 }
