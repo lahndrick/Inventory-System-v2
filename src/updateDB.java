@@ -6,7 +6,7 @@ public class updateDB extends connectionManager {
 
     connectionManager cm;
 
-    public void updateDB(Statement statement) {
+    public void init(Statement statement) {
         try {
             cm = new connectionManager();
             cm.establishConnection();

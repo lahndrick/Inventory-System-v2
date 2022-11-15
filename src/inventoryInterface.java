@@ -34,10 +34,10 @@ public class inventoryInterface extends JFrame {
         searchItemTextField = new JTextField();
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setBorder(javax.swing.BorderFactory.createEmptyBorder()););
 
         skuCodeTextField.setText("sku code");
-        getContentPane().add(skuCodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 120, 30));
+        getContentPane().add(skuCodeTextField, AbsoluteConstraints(0, 0, 120, 30));
 
         barcodeTextField.setText("barcode");
         getContentPane().add(barcodeTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 120, 30));

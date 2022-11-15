@@ -11,7 +11,7 @@ public class queryDB extends connectionManager {
     * this method is used to send a query to the database and get a ResultSet back
     * not to be confused with an update of the database which does not return anything
     */
-    public ResultSet queryDB(String sql) {
+    public ResultSet init(String sql) {
 
         Connection connection = this.getDBConnection();
         Statement statement;

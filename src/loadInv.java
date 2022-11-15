@@ -18,7 +18,7 @@ public class loadInv extends Inventory {
 
     public void update() {
         try {
-            rs = qDB.queryDB(query);
+            rs = qDB.init(query);
             
             if(inventory != null) inventory.clear();
 

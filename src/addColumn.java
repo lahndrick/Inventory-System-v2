@@ -12,6 +12,7 @@ public class addColumn extends updateDB {
         try {
             statement = conn.createStatement();
             statement.addBatch("ALTER TABLE " + tableName + " ADD " + columnName + " VARCHAR(50)");
+            update();
 
         } catch (SQLException ex) {
             System.out.println("SQLException, addTable ");
@@ -23,6 +24,7 @@ public class addColumn extends updateDB {
         try {
             statement = conn.createStatement();
             statement.addBatch("ALTER TABLE " + tableName + " ADD " + columnName + " INT");
+            update();
 
         } catch (SQLException ex) {
             System.out.println("SQLException, addTable ");
@@ -30,24 +32,6 @@ public class addColumn extends updateDB {
     }
 
     public void update() {
-        updateDB(statement);
+        init(statement);
     }
-
-    /* FOR TESTING
-    public static void main(String[] args) {
-        addColumn addColumn;    
-        
-        addColumn = new addColumn("ITEM", "barcode");
-        addColumn.update();
-
-        addColumn = new addColumn("ITEM", "location");
-        addColumn.update();
-
-        addColumn = new addColumn("ITEM", "skucode");
-        addColumn.update();
-
-        addColumn = new addColumn("ITEM", "quantity", "int");
-        addColumn.update();
-    }
-    */
 }

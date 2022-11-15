@@ -14,20 +14,13 @@ public class addTable extends updateDB {
             statement = conn.createStatement();
             statement.addBatch("CREATE TABLE " + s + "(tableNum INT)");
 
-            updateDB(statement);
+            update();
         } catch (SQLException ex) {
             System.out.println("SQLException, addTable ");
         }
     }
 
     public void update() {
-        updateDB(statement);
+        init(statement);
     }
-
-    /* FOR TESTING
-    public static void main(String[] args) {
-        addTable addTable = new addTable("ITEM");
-        addTable.update();
-    }
-     */
 }

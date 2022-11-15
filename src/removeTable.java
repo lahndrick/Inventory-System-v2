@@ -18,13 +18,6 @@ public class removeTable extends updateDB {
     }
 
     public void update() {
-        updateDB(statement);
+        init(statement);
     }
-
-    /* FOR TESTING
-    public static void main(String[] args) {
-        removeTable removeTable = new removeTable("ITEM");
-        removeTable.update();
-    }
-*/
 }

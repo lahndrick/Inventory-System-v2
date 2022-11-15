@@ -19,13 +19,15 @@ public class addItem extends updateDB {
             statement.addBatch("INSERT INTO APP.ITEM (barcode,location,skucode,quantity)"
                     + "VALUES (" + skuCode + ", " + location + ", " + quantity + ", " + barcode + ")");
 
+            update();
+
         } catch (SQLException ex) {
             System.out.println("SQLException" + ex);
         }
     }
 
     public void update() {
-        updateDB(statement);
+        init(statement);
     }
 
 /* FOR TESTING
