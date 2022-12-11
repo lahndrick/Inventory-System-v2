@@ -68,9 +68,8 @@ public class inventorySystem {
         barcodeTextField.setSize(120,40);
         locationTextField.setSize(120,40);
         quantityTextField.setSize(120,40);
-        addItemButton.setSize(120,40);
-
-        removeItemButton.setSize(50,50);
+        addItemButton.setSize(120,50);
+        removeItemButton.setSize(120,50);
         searchItemButton.setSize(50,50);
         tableNameTextField.setSize(50,50);
         removeTableButton.setSize(50,50);
@@ -86,11 +85,11 @@ public class inventorySystem {
         barcodeTextField.setLocation(0,50);
         locationTextField.setLocation(0,100);
         quantityTextField.setLocation(0,150);
-        addItemButton.setLocation(0,200);
         allItemsScrollPane.setLocation(130,0);
         allItemsScrollPane.add(allItemsTextField);
-/* 
-        removeItemButton.setLocation(300,0);
+        removeItemButton.setLocation(addItemButton.getX() + addItemButton.getWidth() + 10,200);
+        addItemButton.setLocation(0,200);
+        /* 
         searchItemButton.setLocation(360,0);
         tableNameTextField.setLocation(420,0);
         removeTableButton.setLocation(480,0);
