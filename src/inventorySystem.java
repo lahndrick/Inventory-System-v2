@@ -63,7 +63,6 @@ public class inventorySystem {
         frame.getContentPane().add(foundItemsTextField);
         frame.getContentPane().add(searchItemTextField);
 
-        //TODO update sizes for each component
         skuCodeTextField.setSize(120,40);
         barcodeTextField.setSize(120,40);
         locationTextField.setSize(120,40);
@@ -81,28 +80,36 @@ public class inventorySystem {
         searchItemTextField.setSize(50,50);
 
         //TODO update locations to appropriate places
+        allItemsScrollPane.add(allItemsTextField);
+        
         skuCodeTextField.setLocation(0,0);
         barcodeTextField.setLocation(0,50);
         locationTextField.setLocation(0,100);
         quantityTextField.setLocation(0,150);
+
         allItemsScrollPane.setLocation(130,0);
-        allItemsScrollPane.add(allItemsTextField);
-        removeItemButton.setLocation(addItemButton.getX() + addItemButton.getWidth() + 10,200);
+        foundItemsScrollPane.setLocation(720,200);
+
         addItemButton.setLocation(0,200);
-        /* 
-        searchItemButton.setLocation(360,0);
-        tableNameTextField.setLocation(420,0);
-        removeTableButton.setLocation(480,0);
-        addTableButton.setLocation(540,0);
-        foundItemsScrollPane.setLocation(720,0);
-        foundItemsTextField.setLocation(780,0);
-        searchItemTextField.setLocation(840,0);
-*/
+        removeItemButton.setLocation(addItemButton.getX() + addItemButton.getWidth() + 10,200);
+        searchItemButton.setLocation(360,200);
+        removeTableButton.setLocation(480,200);
+        addTableButton.setLocation(540,200);
+
+        foundItemsTextField.setLocation(780,200);
+        searchItemTextField.setLocation(840,200);
+        tableNameTextField.setLocation(420,200);
+        
         barcodeTextField.setToolTipText("barcode");
         skuCodeTextField.setToolTipText("sku code");
         locationTextField.setToolTipText("location");
         quantityTextField.setToolTipText("quantity");
+        
         addItemButton.setText("Add item");
+        removeItemButton.setText("remove item");
+        searchItemButton.setText("search item");
+        removeTableButton.setText("remove table");
+        addTableButton.setText("add table");
 
         frame.setSize(800, 500);
         frame.setTitle("Inventory System");
