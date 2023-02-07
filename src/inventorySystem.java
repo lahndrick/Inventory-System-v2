@@ -63,6 +63,7 @@ public class inventorySystem {
         frame.getContentPane().add(allItemsScrollPane);
         frame.getContentPane().add(foundItemsScrollPane);
 
+<<<<<<< HEAD
         int textSize[] = {120,40};
         skuCodeTextField.setSize(textSize[0],textSize[1]);
         barcodeTextField.setSize(textSize[0],textSize[1]);
@@ -79,17 +80,34 @@ public class inventorySystem {
         searchItemButton.setSize(buttonSize[0],buttonSize[1]);
         removeTableButton.setSize(buttonSize[0],buttonSize[1]);
         allItemsScrollPane.setSize(300,190);
+=======
+        skuCodeTextField.setSize(120,40);
+        barcodeTextField.setSize(120,40);
+        locationTextField.setSize(120,40);
+        quantityTextField.setSize(120,40);
+        addItemButton.setSize(120,50);
+        removeItemButton.setSize(120,50);
+        searchItemButton.setSize(50,50);
+        tableNameTextField.setSize(50,50);
+        removeTableButton.setSize(50,50);
+        addTableButton.setSize(50,50);
+        allItemsScrollPane.setSize(500,190);
+        allItemsTextField.setSize(50,50);
+>>>>>>> 9783642f3ab98a3c68bf4ccb40e3b8d0dc026cab
         foundItemsScrollPane.setSize(50,50);
 
 
 
         //TODO update locations to appropriate places
+        allItemsScrollPane.add(allItemsTextField);
+        
         skuCodeTextField.setLocation(0,0);
         barcodeTextField.setLocation(0,50);
         locationTextField.setLocation(0,100);
         quantityTextField.setLocation(0,150);
-        addItemButton.setLocation(0,200);
+
         allItemsScrollPane.setLocation(130,0);
+<<<<<<< HEAD
         allItemsScrollPane.add(allItemsTextField);
         removeItemButton.setLocation(addItemButton.getX() + addItemButton.getWidth() + 10,addItemButton.getY());
         searchItemTextField.setLocation(allItemsScrollPane.getWidth() + allItemsScrollPane.getX() + 10,0);
@@ -101,14 +119,36 @@ public class inventorySystem {
         foundItemsScrollPane.setLocation(720,0);
         foundItemsTextField.setLocation(780,0);
         //not set yet above
+=======
+        foundItemsScrollPane.setLocation(720,200);
+
+        addItemButton.setLocation(0,200);
+        removeItemButton.setLocation(addItemButton.getX() + addItemButton.getWidth() + 10,200);
+        searchItemButton.setLocation(360,200);
+        removeTableButton.setLocation(480,200);
+        addTableButton.setLocation(540,200);
+
+        foundItemsTextField.setLocation(780,200);
+        searchItemTextField.setLocation(840,200);
+        tableNameTextField.setLocation(420,200);
+        
+>>>>>>> 9783642f3ab98a3c68bf4ccb40e3b8d0dc026cab
         barcodeTextField.setToolTipText("barcode");
         skuCodeTextField.setToolTipText("sku code");
         locationTextField.setToolTipText("location");
         quantityTextField.setToolTipText("quantity");
+        
         addItemButton.setText("Add item");
+<<<<<<< HEAD
         removeItemButton.setText("Remove item");
         searchItemButton.setText("search item");
         searchItemTextField.setToolTipText("search item");
+=======
+        removeItemButton.setText("remove item");
+        searchItemButton.setText("search item");
+        removeTableButton.setText("remove table");
+        addTableButton.setText("add table");
+>>>>>>> 9783642f3ab98a3c68bf4ccb40e3b8d0dc026cab
 
         frame.setSize(600, 500);
         frame.setTitle("Inventory System");
